@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A simple Todo app" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Zubair Ahmed" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/1dc27cdb5e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
+    <title>Todo App</title>
+  </head>
+
+  <body>
+    <div
+      class="border border-dark border-4 bg-dark bg-gradient text-white"
+      id="main"
+    >
+      <!-- Heading start  -->
+      <h1 class="head bg-dark bg-gradient">Todo App</h1>
+      <h4 class="sub-head">Tasks</h4>
+      <!-- Heading end  -->
+
+      <!-- Modal -->
+      <form
+        class="modal fade"
+        id="form"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header bg-dark bg-gradient text-white">
+              <h5 class="modal-title" id="exampleModalLabel">Add new task</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <textarea
+                class="form-control"
+                name=""
+                id="taskInput"
+                cols="60"
+                rows="10"
+                placeholder="Description"
+              ></textarea>
+              <p id="wmsg"></p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+
+              <button
+                id="save"
+                type="submit"
+                class="btn btn-dark bg-dark bg-gradient"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- Modal end  -->
+
+      <!-- Task Section start  -->
+      <div id="containTask">
+        <div id="tasks">
+          <span>
+            <input type="checkbox" name="" id="cbox" />
+            <p id="post">Wellcome! </p>
+          </span>
+          <span>
+            <i
+              data-bs-toggle="modal"
+              data-bs-target="#form"
+              onclick="editTask(this)"
+              class="fa-solid fa-pen-to-square"
+            ></i>
+            <i onclick="deleteTask(this)" class="fa-solid fa-trash-can"></i>
+          </span>
+        </div>
+
+        <div id="tasks">
+          <span>
+            <input type="checkbox" name="" id="cbox" />
+            <p id="post">Add your first task</p>
+          </span>
+          <span>
+            <i
+              data-bs-toggle="modal"
+              data-bs-target="#form"
+              onclick="editTask(this)"
+              class="fa-solid fa-pen-to-square"
+            ></i>
+            <i onclick="deleteTask(this)" class="fa-solid fa-trash-can"></i>
+          </span>
+        </div>
+      </div>
+      <!-- Task section end  -->
+
+      <!-- Task add button  -->
+      <span
+        class="material-symbols-outlined"
+        data-bs-toggle="modal"
+        data-bs-target="#form"
+      >
+        add_circle
+      </span>
+      <!-- Task end button end  -->
+    </div>
+
+    <script src="script.js"></script>
+    <!-- JavaScript Bundle with Popper  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
